@@ -46,6 +46,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (FindObjectOfType<GameManager>() != null && FindObjectOfType<GameManager>().isOver)
+        {
+            GetComponent<Rigidbody2D>().bodyType = UnityEngine.RigidbodyType2D.Static;
+            return;
+        }
+            
         //Debug.Log(Input.GetAxisRaw("Horizontal"));
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
