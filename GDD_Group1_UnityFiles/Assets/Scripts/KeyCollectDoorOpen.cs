@@ -26,7 +26,6 @@ public class KeyCollectDoorOpen : MonoBehaviour
             keySelf.GetComponent<SpriteRenderer>().enabled = false;
 
             keyHit = true;
-            FindObjectOfType<AudioManager>().Play("KeyCollectSound");
         }
     }
 

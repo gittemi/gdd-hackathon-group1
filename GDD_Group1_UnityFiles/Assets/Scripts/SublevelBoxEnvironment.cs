@@ -21,11 +21,10 @@ public class SublevelBoxEnvironment : MonoBehaviour
     Vector3 targetCameraPos;
 
     bool inBox = false;
-    int shrunk = 0;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && shrunk <= 0)
+        if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Player hit!");
             inBox = true;
@@ -39,7 +38,6 @@ public class SublevelBoxEnvironment : MonoBehaviour
 
             //collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             portalFrame.bodyType = RigidbodyType2D.Static;
-            shrunk++;
         }
 
         //Debug.Log("Collided!");
@@ -49,7 +47,7 @@ public class SublevelBoxEnvironment : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player" && shrunk == 1)
+        if (collision.gameObject.tag == "Player")
         {
             Debug.Log("Left");
             inBox = false;
@@ -62,7 +60,6 @@ public class SublevelBoxEnvironment : MonoBehaviour
 
             //collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             portalFrame.bodyType = RigidbodyType2D.Dynamic;
-            shrunk--;
         }
 
         //camera.orthographicSize /= playerScale;
