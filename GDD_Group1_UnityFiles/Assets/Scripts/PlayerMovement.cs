@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "SublevelBox")
+        if (collision.gameObject.tag == "SublevelBox")
         {
             Debug.Log("Pushing");
             pushing = true;
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //Debug.Log(Input.GetAxisRaw("Horizontal"));
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        
+
         animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         if (Input.GetButtonDown("Jump"))
