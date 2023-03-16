@@ -9,8 +9,12 @@ public class PlayerMovement : MonoBehaviour
     public float pushingSpeedScale = 0.5f;
 
     float horizontalMove = 0f;
+    float verticalMove = 0f;
     bool jump = false;
     bool pushing = false;
+
+    public bool isOnLadder = false;
+    public float ladderSpeed = 2f;
 
     public Animator animator;
 
@@ -49,14 +53,23 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            bool toPlay = !jump;
             jump = true;
             animator.SetBool("IsJumping", true);
+
+            if (toPlay)
+                FindObjectOfType<AudioManager>().Play("JumpSound");
         }
+
+        verticalMove = Input.GetAxisRaw("Vertical") * ladderSpeed;
+        if (!isOnLadder)
+            verticalMove = 0;
     }
 
     public void OnLanding()
     {
         animator.SetBool("IsJumping", false);
+        jump = false;
     }
 
     private void FixedUpdate()
@@ -66,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Move our characeter
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-        jump = false;
+
+        GetComponent<Transform>().position += new Vector3(0f, verticalMove, 0f);
     }
 }
