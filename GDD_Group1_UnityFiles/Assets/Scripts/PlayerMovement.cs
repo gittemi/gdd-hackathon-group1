@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     bool jump = false;
     bool pushing = false;
 
+    public Animator animator;
+
     // Start is called before the first frame update
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -42,11 +44,19 @@ public class PlayerMovement : MonoBehaviour
     {
         //Debug.Log(Input.GetAxisRaw("Horizontal"));
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        
+        animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            animator.SetBool("IsJumping", true);
         }
+    }
+
+    public void OnLanding()
+    {
+        animator.SetBool("IsJumping", false);
     }
 
     private void FixedUpdate()
