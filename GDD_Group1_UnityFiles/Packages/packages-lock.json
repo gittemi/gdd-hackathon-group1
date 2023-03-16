@@ -73,7 +73,7 @@
       "dependencies": {}
     },
     "com.unity.2d.tilemap.extras": {
-      "version": "file:../Assets/NewPackages/2d-extras-1.8.1-preview",
+      "version": "file:../NewPackages/2d-extras-1.8.1-preview",
       "depth": 0,
       "source": "local",
       "dependencies": {
