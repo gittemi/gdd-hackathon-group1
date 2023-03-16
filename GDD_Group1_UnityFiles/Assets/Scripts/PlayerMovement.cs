@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Animator animator;
 
+    public AudioSource jumpSoundSource;
+
     // Start is called before the first frame update
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,7 +38,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-
+        //jumpSoundSource.clip = jumpSound;
+        //jumpSoundSource.volume = 1.0f;
     }
 
     // Update is called once per frame
@@ -49,14 +52,23 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
+            bool toPlay = !jump;
             jump = true;
             animator.SetBool("IsJumping", true);
+
+            // Jump Sound
+            Debug.Log("<Insert Jump Sound>");
+            //FindObjectOfType<AudioManager>().Play("JumpSound");
+            if(toPlay)
+                //jumpSoundSource.Play();
+                FindObjectOfType<AudioManager>().Play("JumpSound");
         }
     }
 
     public void OnLanding()
     {
         animator.SetBool("IsJumping", false);
+        jump = false;
     }
 
     private void FixedUpdate()
@@ -66,6 +78,6 @@ public class PlayerMovement : MonoBehaviour
 
         // Move our characeter
         controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-        jump = false;
+        //jump = false;
     }
 }
