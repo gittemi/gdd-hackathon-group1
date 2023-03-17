@@ -2896,6 +2896,8 @@ MonoBehaviour:
   playerScale: 0.4
   cameraZoomSpeed: 10
   cameraMoveSpeed: 10
+  cameraRotSpeed: 10
+  gravityDirection: Right
 --- !u!1 &408297548
 GameObject:
   m_ObjectHideFlags: 0

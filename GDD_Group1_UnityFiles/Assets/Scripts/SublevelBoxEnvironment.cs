@@ -15,18 +15,37 @@ public class SublevelBoxEnvironment : MonoBehaviour
     public float playerScale = 0.2f;
     public float cameraZoomSpeed = 10.0f;
     public float cameraMoveSpeed = 10.0f;
+    public float cameraRotSpeed = 10.0f;
+
+    public string gravityDirection = "Down";
 
     float targetCameraSize;
     Vector3 defaultCameraPos;
     Vector3 targetCameraPos;
+    Quaternion targetCameraRot;
 
     bool inBox = false;
     int shrunkLevel = 0;
+
+    Vector2 oldGravity;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player" && shrunkLevel == 0)
         {
+            if (gravityDirection == "Right")
+            {
+                //Physics2D.gravity = new Vector2(-oldGravity.y, oldGravity.x);
+                Physics2D.gravity = new Vector2(20f, 0f);
+                playerTransform.Rotate(0f, 0f, 90.0f);
+                characterController.direction = "R";
+            }
+            else
+            {
+                Physics2D.gravity = oldGravity;
+                characterController.direction = "D";
+            }
+
             Debug.Log("Player hit!");
             inBox = true;
             playerTransform.localScale = playerTransform.localScale * playerScale;
@@ -51,6 +70,11 @@ public class SublevelBoxEnvironment : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && shrunkLevel == 1)
         {
+            if(gravityDirection == "Right")
+                playerTransform.Rotate(0f, 0f, -90.0f);
+            Physics2D.gravity = oldGravity;
+            characterController.direction = "D";
+
             Debug.Log("Left");
             inBox = false;
             playerTransform.localScale = playerTransform.localScale / playerScale;
@@ -73,7 +97,9 @@ public class SublevelBoxEnvironment : MonoBehaviour
     void Start()
     {
         targetCameraSize = camera.orthographicSize;
+        targetCameraRot = camera.GetComponent<Transform>().rotation;
         defaultCameraPos = targetCameraPos = camera.transform.position;
+        oldGravity = Physics2D.gravity;
     }
 
     // Update is called once per frame

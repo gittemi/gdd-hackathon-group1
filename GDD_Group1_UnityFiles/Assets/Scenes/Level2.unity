@@ -178,6 +178,8 @@ MonoBehaviour:
   playerScale: 0.4
   cameraZoomSpeed: 10
   cameraMoveSpeed: 10
+  cameraRotSpeed: 10
+  gravityDirection: Down
 --- !u!19719996 &2103330
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -5131,7 +5133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2832990058111741200, guid: a7203bbfd1529854bbbf172ee38784de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6899999
+      value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: 2832990058111741200, guid: a7203bbfd1529854bbbf172ee38784de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6616,7 +6618,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2832990058111741200, guid: a7203bbfd1529854bbbf172ee38784de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.6899999
+      value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: 2832990058111741200, guid: a7203bbfd1529854bbbf172ee38784de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7639,7 +7641,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2832990058111741200, guid: a7203bbfd1529854bbbf172ee38784de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.0699997
+      value: -4.95
       objectReference: {fileID: 0}
     - target: {fileID: 2832990058111741200, guid: a7203bbfd1529854bbbf172ee38784de, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8039,7 +8041,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0024681091, y: -0.059274733}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8050,7 +8052,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.86671746, y: 0.88145053}
   m_EdgeRadius: 0
 --- !u!212 &1082993634
 SpriteRenderer:
@@ -14193,7 +14195,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 547c92efb9136f848959d85c9002ba0b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -14708,7 +14710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9a302ee7548504d82d99d646c15ff4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathText: You offered peanuts to the cute monster
+  deathText: You tried offering peanuts to the cute monster
 --- !u!114 &1832578055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15129,7 +15131,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2832990058111741200, guid: a7203bbfd1529854bbbf172ee38784de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.0699997
+      value: -4.95
       objectReference: {fileID: 0}
     - target: {fileID: 2832990058111741200, guid: a7203bbfd1529854bbbf172ee38784de, type: 3}
       propertyPath: m_LocalPosition.y

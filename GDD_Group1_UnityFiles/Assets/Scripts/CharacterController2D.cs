@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
 {
+	public string direction = "D";
+
 	[SerializeField] public float m_JumpForce = 400f;							// Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;			// Amount of maxSpeed applied to crouching movement. 1 = 100%
 	[Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;	// How much to smooth out the movement
@@ -106,7 +108,11 @@ public class CharacterController2D : MonoBehaviour
 			}
 
 			// Move the character by finding the target velocity
+			// GRAVITY WARP CODE
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
+			if (direction == "R")
+				targetVelocity = new Vector2(m_Rigidbody2D.velocity.y, move * 10f);
+			
 			// And then smoothing it out and applying it to the character
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
@@ -128,7 +134,11 @@ public class CharacterController2D : MonoBehaviour
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			// GRAVITY WARP CODE
+			if(direction == "R")
+				m_Rigidbody2D.AddForce(new Vector2(-m_JumpForce*3, 0));
+			else
+				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
 	}
 
