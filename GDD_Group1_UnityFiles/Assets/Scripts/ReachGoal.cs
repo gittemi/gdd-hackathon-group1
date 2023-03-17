@@ -8,6 +8,7 @@ public class ReachGoal : MonoBehaviour
     {
         Debug.Log("Flag Reached!");
         FindObjectOfType<GameManager>().LevelComplete();
+        FindObjectOfType<AudioManager>().Play("WinMusic");
     }
 }
 

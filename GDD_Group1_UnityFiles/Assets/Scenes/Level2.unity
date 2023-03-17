@@ -8021,6 +8021,7 @@ GameObject:
   - component: {fileID: 1082993633}
   - component: {fileID: 1082993636}
   - component: {fileID: 1082993637}
+  - component: {fileID: 1082993638}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Untagged
@@ -8148,6 +8149,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathText: You tried to headpat the cute monster
+--- !u!95 &1082993638
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082993632}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b56f4238963374b0c93a8210f271b57b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1140177427
 GameObject:
   m_ObjectHideFlags: 0
@@ -14600,6 +14620,7 @@ GameObject:
   - component: {fileID: 1832578051}
   - component: {fileID: 1832578055}
   - component: {fileID: 1832578054}
+  - component: {fileID: 1832578056}
   m_Layer: 0
   m_Name: Enemy2
   m_TagString: Untagged
@@ -14727,6 +14748,25 @@ MonoBehaviour:
   rightPoint: {fileID: 436647631}
   moveSpeed: 3
   isRight: 0
+--- !u!95 &1832578056
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832578050}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b56f4238963374b0c93a8210f271b57b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1836980313
 PrefabInstance:
   m_ObjectHideFlags: 0

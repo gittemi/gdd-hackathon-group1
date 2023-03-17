@@ -7,5 +7,6 @@ public class AttackPlayer : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         FindObjectOfType<GameManager>().GameOver(deathText);
+        FindObjectOfType<AudioManager>().Play("LossMusic");
     }
 }

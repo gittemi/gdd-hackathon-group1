@@ -7,7 +7,7 @@ public class SublevelBoxEnvironment : MonoBehaviour
     public Transform playerTransform;
     //public GameObject player;
     public Transform boxCentre;
-    //public PlayerMovement playerMovement;
+    public PlayerMovement playerMovement;
     public Rigidbody2D playerRigidBody;
     public Rigidbody2D portalFrame;
     public CharacterController2D characterController;
@@ -52,7 +52,7 @@ public class SublevelBoxEnvironment : MonoBehaviour
             //playerMovement.jumpSpeed *= Mathf.Pow(playerScale, 0.5f);
             characterController.m_JumpForce *= Mathf.Pow(playerScale, 0.5f);
             playerRigidBody.gravityScale *= Mathf.Pow(playerScale, 0.5f);
-            //playerMovement.moveSpeed *= playerScale;
+            playerMovement.runSpeed *= playerScale;
 
             targetCameraSize *= playerScale;
 
@@ -79,7 +79,7 @@ public class SublevelBoxEnvironment : MonoBehaviour
             inBox = false;
             playerTransform.localScale = playerTransform.localScale / playerScale;
             //playerMovement.jumpzSpeed /= Mathf.Pow(playerScale, 0.5f);
-            //playerMovement.moveSpeed /= playerScale;
+            playerMovement.runSpeed *= playerScale;
             characterController.m_JumpForce /= Mathf.Pow(playerScale, 0.5f);
             playerRigidBody.gravityScale /= Mathf.Pow(playerScale, 0.5f);
             targetCameraSize /= playerScale;

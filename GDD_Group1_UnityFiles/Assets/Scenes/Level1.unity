@@ -3299,7 +3299,17 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: BackgroundMusic
     clip: {fileID: 8300000, guid: f77a1200e063ae241bd25b61127933e3, type: 3}
-    volume: 0.4
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: WinMusic
+    clip: {fileID: 8300000, guid: 73a88e3a5a84f3b44a3210b61551d21b, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+  - name: LossMusic
+    clip: {fileID: 8300000, guid: 840e609f9855bbb4b8eb6ab67f8b3b0f, type: 3}
+    volume: 1
     pitch: 1
     source: {fileID: 0}
 --- !u!4 &651094221
